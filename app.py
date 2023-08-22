@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 
 # WSGI Application
 app=Flask(__name__)
@@ -7,6 +7,10 @@ app=Flask(__name__)
 @app.route('/')
 def welcome():
     return 'Welcome to my Flask App!'
+
+@app.route('/index')
+def index():
+    return render_template('index.html')
 
 @app.route('/members')
 def members():
